@@ -1,0 +1,6 @@
+interface:
+  display_name: "Yuge Hasi Devkit"
+  short_description: "Safely deploy game builds to SteamOS"
+  default_prompt: "Use $yuge-hasi-devkit to check a configured SteamOS device before deployment."
+policy:
+  allow_implicit_invocation: false

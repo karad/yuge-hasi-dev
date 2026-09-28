@@ -1,0 +1,7 @@
+Yuge Hasi Devkit includes an implementation informed by the SteamOS Devkit
+protocol reference. The applicable upstream copyright and MIT license notice
+are provided in `crates/devkit/VALVE-NOTICE`.
+
+Steam, SteamOS, Steam Deck, and Valve are trademarks or registered trademarks
+of Valve Corporation. This project is independent from and is not endorsed by
+or affiliated with Valve Corporation.

@@ -1,0 +1,18 @@
+name: Bug report
+description: Report a reproducible problem without secrets.
+body:
+  - type: textarea
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Environment
+      description: Do not include device addresses, host keys, or credentials.
+  - type: checkboxes
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials and private device details.
+          required: true

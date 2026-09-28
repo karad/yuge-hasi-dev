@@ -1,0 +1,13 @@
+[package]
+name = "yuge-hasi-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+description = "ELF validation primitives for Yuge Hasi Devkit"
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true

@@ -1,0 +1,8 @@
+schema_version = 2
+
+[game]
+title = "PocketPop"
+source = "/Users/kazuhirohara/study/steam/steam-frame-1/Builds/SteamFrame/Playtest/PocketPop-Playtest.apk"
+executable = "PocketPop-Playtest.apk"
+arguments = []
+runtime = "android"
