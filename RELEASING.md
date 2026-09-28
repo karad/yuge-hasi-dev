@@ -16,14 +16,14 @@ Apple before publication.
 
 ## Initial repository publication
 
-Create `karad/yuge-hasi` on GitHub, then run these commands locally after
+Create `karad/yuge-hasi-dev` on GitHub, then run these commands locally after
 reviewing the working tree:
 
 ```sh
 git add -A
 git commit -m "Prepare Yuge Hasi Devkit for public release"
 git branch -M main
-git remote add origin https://github.com/karad/yuge-hasi.git
+git remote add origin https://github.com/karad/yuge-hasi-dev.git
 git push -u origin main
 ```
 
@@ -44,7 +44,7 @@ the Homebrew formula below fetches that archive and builds the CLI locally.
 ## Initial release flow
 
 ```text
-Publish karad/yuge-hasi with a clean initial commit
+Publish karad/yuge-hasi-dev with a clean initial commit
     -> Push the v0.1.0 tag
     -> Download that tag's source archive and calculate its SHA-256
     -> Commit Formula/yuge-hasi.rb to karad/homebrew-yuge-hasi
@@ -64,8 +64,8 @@ the source release is published:
 ```ruby
 class YugeHasi < Formula
   desc "Deploy game builds from macOS to SteamOS developer devices"
-  homepage "https://github.com/karad/yuge-hasi"
-  url "https://github.com/karad/yuge-hasi/archive/refs/tags/vVERSION.tar.gz"
+  homepage "https://github.com/karad/yuge-hasi-dev"
+  url "https://github.com/karad/yuge-hasi-dev/archive/refs/tags/vVERSION.tar.gz"
   sha256 "SHA256"
   license "MIT"
 
@@ -90,7 +90,7 @@ it in a clean environment before publishing the tap commit.
 After the tag is public, users add the marketplace with:
 
 ```sh
-codex plugin marketplace add karad/yuge-hasi --ref vVERSION --sparse .agents/plugins
+codex plugin marketplace add karad/yuge-hasi-dev --ref vVERSION --sparse .agents/plugins
 ```
 
 They then choose **Yuge Hasi Devkit** in the Codex Plugins screen and select

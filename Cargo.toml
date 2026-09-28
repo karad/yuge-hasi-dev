@@ -8,8 +8,8 @@ edition = "2024"
 rust-version = "1.91"
 publish = false
 license = "MIT"
-repository = "https://github.com/karad/yuge-hasi"
-homepage = "https://github.com/karad/yuge-hasi"
+repository = "https://github.com/karad/yuge-hasi-dev"
+homepage = "https://github.com/karad/yuge-hasi-dev"
 
 [workspace.dependencies]
 serde = { version = "1.0.228", features = ["derive"] }

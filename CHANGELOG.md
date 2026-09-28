@@ -24,5 +24,5 @@ This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - The CLI keeps its authentication material separate from the user's SSH
   configuration.
 
-[Unreleased]: https://github.com/karad/yuge-hasi/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/karad/yuge-hasi/releases/tag/v0.1.0
+[Unreleased]: https://github.com/karad/yuge-hasi-dev/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/karad/yuge-hasi-dev/releases/tag/v0.1.0

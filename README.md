@@ -54,7 +54,7 @@ Install the CLI first, then add the release marketplace and select **Install**
 for **Yuge Hasi Devkit** in the Codex Plugins screen:
 
 ```sh
-codex plugin marketplace add karad/yuge-hasi --ref v0.1.0 --sparse .agents/plugins
+codex plugin marketplace add karad/yuge-hasi-dev --ref v0.1.0 --sparse .agents/plugins
 ```
 
 The plugin guides pairing, validation, and deployment only when those actions
