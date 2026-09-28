@@ -334,7 +334,6 @@ fn nonterminal_conflict_and_project_lock_fail_before_auth_changes() {
     prompts.enabled = true;
     let lock = project::operation_lock(&path).unwrap();
     assert!(device::add(&path, "deck", HOST, "deck", &mut prompts, &fake).is_err());
-    fs2::FileExt::unlock(&lock).unwrap();
     drop(lock);
     let mut saved = project::load(&path).unwrap();
     saved.devices.insert(
@@ -528,7 +527,6 @@ fn new_address_can_reuse_identity_without_pairing_and_auth_lock_stops_work() {
         .is_err()
     );
     assert!(fake.calls.borrow().is_empty());
-    fs2::FileExt::unlock(&guard).unwrap();
     drop(guard);
     let result = device::add(
         &path,

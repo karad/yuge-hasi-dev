@@ -1,5 +1,6 @@
 use crate::{
-    Build, Result, client, invalid, lock, path_text, shared, validate_host, validate_login,
+    Build, LockGuard, Result, client, invalid, lock, path_text, shared, validate_host,
+    validate_login,
 };
 use serde::{Deserialize, Serialize};
 use std::{
@@ -333,7 +334,7 @@ fn read_hosts(path: &Path) -> Result<BTreeMap<String, String>> {
 }
 
 /// Acquires the lock used when changing a project file.
-pub fn operation_lock(path: &Path) -> Result<fs::File> {
+pub fn operation_lock(path: &Path) -> Result<LockGuard> {
     let name = path
         .file_name()
         .ok_or_else(|| invalid("Missing project filename"))?;

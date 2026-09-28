@@ -122,8 +122,19 @@ pub fn atomic_write(path: &Path, data: &[u8]) -> Result<()> {
     Ok(())
 }
 
+/// Holds an exclusive file lock until it is released.
+pub struct LockGuard {
+    file: fs::File,
+}
+
+impl Drop for LockGuard {
+    fn drop(&mut self) {
+        let _ = fs2::FileExt::unlock(&self.file);
+    }
+}
+
 /// Acquires an exclusive nonblocking lock on an owner-only file.
-pub fn lock(path: &Path) -> Result<fs::File> {
+pub fn lock(path: &Path) -> Result<LockGuard> {
     let file = fs::OpenOptions::new()
         .read(true)
         .write(true)
@@ -133,7 +144,24 @@ pub fn lock(path: &Path) -> Result<fs::File> {
         .custom_flags(libc::O_NOFOLLOW)
         .open(path)?;
     fs2::FileExt::try_lock_exclusive(&file).map_err(|_| invalid("Another operation is active"))?;
-    Ok(file)
+    Ok(LockGuard { file })
+}
+
+#[cfg(test)]
+mod tests {
+    use super::lock;
+
+    #[test]
+    fn lock_is_available_after_the_previous_guard_is_dropped() {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("operation.lock");
+
+        for _ in 0..10 {
+            let guard = lock(&path).unwrap();
+            drop(guard);
+            lock(&path).unwrap();
+        }
+    }
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

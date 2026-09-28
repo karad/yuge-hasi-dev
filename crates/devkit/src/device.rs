@@ -217,7 +217,7 @@ pub fn list_in(path: &Path, shared_root_override: Option<&Path>) -> Result<Value
     let devices = if saved.schema_version == 2 {
         let root = shared_root_override
             .map(Path::to_path_buf)
-            .map_or_else(|| shared::root(), Ok)
+            .map_or_else(shared::root, Ok)
             .map_err(|e| at("auth", "auth_error", e))?;
         shared::load(&root)
             .map_err(|e| at("device", "device_registry_error", e))?
@@ -249,7 +249,7 @@ pub fn remove_in(path: &Path, name: &str, shared_root_override: Option<&Path>) -
     if saved.schema_version == 2 {
         let root = shared_root_override
             .map(Path::to_path_buf)
-            .map_or_else(|| shared::root(), Ok)
+            .map_or_else(shared::root, Ok)
             .map_err(|e| at("auth", "auth_error", e))?;
         let _registry_lock =
             shared::operation_lock(&root).map_err(|e| at("device", "device_locked", e))?;

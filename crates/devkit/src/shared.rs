@@ -1,5 +1,5 @@
 use crate::{
-    Result, invalid, lock, private_dir,
+    LockGuard, Result, invalid, lock, private_dir,
     project::{self, Device},
 };
 use serde::{Deserialize, Serialize};
@@ -40,7 +40,7 @@ pub fn prepare(root: &Path) -> Result<()> {
 }
 
 /// Locks the shared device registry for a registration update.
-pub fn operation_lock(root: &Path) -> Result<fs::File> {
+pub fn operation_lock(root: &Path) -> Result<LockGuard> {
     prepare(root)?;
     lock(&root.join("devices.toml.lock"))
 }
