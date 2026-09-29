@@ -71,12 +71,16 @@ class YugeHasi < Formula
 
   depends_on "rust" => :build
 
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/devkit")
   end
 
   test do
-    assert_match "SteamOS development", shell_output("#{bin}/yuge-hasi devkit --help")
+    assert_match "Usage: yuge-hasi devkit", shell_output("#{bin}/yuge-hasi devkit --help")
   end
 end
 ```
