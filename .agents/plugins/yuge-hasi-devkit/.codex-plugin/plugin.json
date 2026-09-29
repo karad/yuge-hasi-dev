@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Safely operate the Yuge Hasi SteamOS game deployment CLI.",
   "author": {
-    "name": "Yuge Hasi contributors"
+    "name": "Kazuhiro Hara"
   },
   "homepage": "https://github.com/karad/yuge-hasi-dev",
   "repository": "https://github.com/karad/yuge-hasi-dev",
@@ -14,7 +14,7 @@
     "displayName": "Yuge Hasi Devkit",
     "shortDescription": "Safely deploy game builds to SteamOS devices",
     "longDescription": "Guides safe use of the local Yuge Hasi Devkit CLI for SteamOS pairing, validation, and deployment.",
-    "developerName": "Yuge Hasi contributors",
+    "developerName": "Kazuhiro Hara",
     "category": "Developer Tools",
     "capabilities": ["Local CLI guidance"],
     "defaultPrompt": ["Check my SteamOS device before I deploy a game build."]
