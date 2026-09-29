@@ -8,7 +8,7 @@
       "name": "yuge-hasi-devkit",
       "source": {
         "source": "local",
-        "path": "./yuge-hasi-devkit"
+        "path": "./.agents/plugins/yuge-hasi-devkit"
       },
       "policy": {
         "installation": "AVAILABLE",

@@ -11,6 +11,14 @@ device and register it with Steam. PocketPop APK transfer, launch, input, exit,
 and relaunch after a Steam Frame reboot were verified; other Android titles
 remain unverified.
 
+## CLI availability
+
+- Before running a Devkit command, verify that `yuge-hasi` is available on the
+  local `PATH`.
+- If it is unavailable, do not attempt pairing, validation, or deployment.
+  Tell the user to install the released CLI with `brew install karad/yuge-hasi`,
+  then ask them to retry after installation completes.
+
 ## Safety boundaries
 
 - Do not expose SSH private keys, authentication directories, device connection

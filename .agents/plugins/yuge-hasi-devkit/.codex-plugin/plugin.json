@@ -5,8 +5,8 @@
   "author": {
     "name": "Yuge Hasi contributors"
   },
-  "homepage": "https://github.com/karad/yuge-hasi",
-  "repository": "https://github.com/karad/yuge-hasi",
+  "homepage": "https://github.com/karad/yuge-hasi-dev",
+  "repository": "https://github.com/karad/yuge-hasi-dev",
   "license": "MIT",
   "keywords": ["steamos", "steam", "game-development", "deployment"],
   "skills": "./skills/",
