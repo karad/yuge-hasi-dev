@@ -23,4 +23,4 @@ tempfile.workspace = true
 base64 = "0.23"
 fs2 = "0.4"
 libc = "0.2"
-toml = "0.8.23"
+toml = "1.1.6"
